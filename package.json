@@ -1,0 +1,22 @@
+{
+  "name": "high-score-server-express",
+  "version": "1.0.0",
+  "description": "Web server that keeps track of high scores in a game",
+  "main": "scores.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfff29/high-score-server-express.git"
+  },
+  "author": "Luis Fuentes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisfff29/high-score-server-express/issues"
+  },
+  "homepage": "https://github.com/luisfff29/high-score-server-express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
