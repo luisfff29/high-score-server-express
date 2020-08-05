@@ -16,17 +16,19 @@ app.get("/", (req, res) => {
 });
 
 app.get("/scores", (req, res) => {
-    res.json(scores);
-});
-
-app.post("/scores", (req, res) => {
-    scores.push(req.body);
     new_scores = scores
         .concat()
         .sort((a, b) => b.score - a.score)
         .slice(0, 3);
-    res.status(201);
     res.json(new_scores);
+});
+
+app.post("/scores", (req, res) => {
+    scores.push(req.body);
+    res.status(201);
+    res.send(
+        `The JSON was added into the score list succesfully!\n Check out the top 3 scores at /scores`
+    );
 });
 
 app.listen(port, () => {
