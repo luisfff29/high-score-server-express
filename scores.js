@@ -6,6 +6,9 @@ var scores = [
     { name: "David", score: 39 },
 ];
 
+// https://expressjs.com/en/4x/api.html#express.json
+app.use(express.json());
+
 app.get("/", (req, res) => {
     res.send(
         "Welcome to High Score Server (now with expres.js).\nGo to /scores and check to latest scores."
@@ -14,6 +17,16 @@ app.get("/", (req, res) => {
 
 app.get("/scores", (req, res) => {
     res.json(scores);
+});
+
+app.post("/scores", (req, res) => {
+    scores.push(req.body);
+    new_scores = scores
+        .concat()
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3);
+    res.status(201);
+    res.json(new_scores);
 });
 
 app.listen(port, () => {
